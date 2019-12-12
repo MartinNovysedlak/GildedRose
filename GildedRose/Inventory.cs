@@ -56,11 +56,14 @@ namespace GildedRose
                 }
                 if (item.Name == "Conjured Mana Cake")
                 {
-                    item.Quality -= 2;
-
-                    if(item.SellIn <= 2)
+                   
+                    if(item.SellIn <= -1)
                     {
-                        item.Quality = 0;
+                        item.Quality -= 4;
+                    }
+                    else
+                    {
+                        item.Quality -= 2;
                     }
                 }
 
