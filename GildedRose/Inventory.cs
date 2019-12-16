@@ -29,6 +29,30 @@ namespace GildedRose
                     continue;
                 }
                     item.SellIn--;
+                if (item.Name == "Elixir of the Mongoose")
+                {
+                    if (item.SellIn >= 0)
+                    {
+                        item.Quality--;
+                    }
+                    else
+                    {
+                        item.Quality -= 2;
+                    }
+                }
+
+                if(item.Name == "+5 Dexterity Vest")
+                {
+                    if (item.SellIn >= 0)
+                    {
+                        item.Quality--;
+                    }
+                    else
+                    {
+                        item.Quality -= 2;
+                    }
+                }
+
                 if(item.Name == "Aged Brie")
                 {
                     item.Quality++;
@@ -45,13 +69,13 @@ namespace GildedRose
                     {
                         item.Quality = 0;
                     }
-                    if (item.SellIn <= 5)
+                    if (item.SellIn <= 5 && item.SellIn > 0)
                     {
                         item.Quality += 2;
                     }
-                    if (item.SellIn <= 10)
+                    if (item.SellIn <= 10 && item.SellIn > 5)
                     {
-                        item.Quality += 3;
+                        item.Quality += 1;
                     }
                 }
                 if (item.Name == "Conjured Mana Cake")
